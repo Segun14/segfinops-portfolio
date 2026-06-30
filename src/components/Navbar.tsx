@@ -4,9 +4,9 @@ import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "#about", label: "About" },
-  { hreply_to: "#services", label: "Services" },
-  { hreply_to: "#projects", label: "Projects" },
-  { hreply_to: "#expertise", label: "Expertise" },
+  { href: "#services", label: "Services" },
+  { href: "#projects", label: "Projects" },
+  { href: "#expertise", label: "Expertise" },
   { href: "#contact", label: "Contact" },
 ];
 

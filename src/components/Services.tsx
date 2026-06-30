@@ -70,7 +70,7 @@ export default function Services() {
                 {s.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-xs rounded-full bg-[#6366F1]/10 text-[#818CF8] border border-[#6366F1]/20"
+                    className="px-3 py-1 text-xs rounded-full bg-[var(--tag-bg)] text-[var(--tag-text)] border border-[var(--tag-border)]"
                   >
                     {tag}
                   </span>
