@@ -1,39 +1,62 @@
 export default function Hero() {
   return (
-    <section className="animated-gradient dots-pattern relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--bg-darker)]" />
-      <div className="relative max-w-5xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#6366F1]/10 border border-[#6366F1]/30 mb-8">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-sm text-[var(--text-muted)]">Available for consulting &amp; contract work</span>
-        </div>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-          <span className="text-[var(--text-primary)]">I build</span>{" "}
-          <span className="gradient-text">intelligent</span>
-          <br />
-          <span className="text-[var(--text-primary)]">finance systems</span>
-        </h1>
-        <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl mx-auto mb-10 leading-relaxed">
-          FP&amp;A Engineer turning complex financial operations into
-          automated, AI-powered platforms that save teams{" "}
-          <span className="text-[var(--text-primary)] font-semibold">thousands of hours</span>.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="#projects" className="px-8 py-4 rounded-xl bg-[#6366F1] text-white font-semibold text-lg hover:bg-[#4F46E5] transition-all glow">View My Work</a>
-          <a href="#contact" className="px-8 py-4 rounded-xl border border-[var(--border-color)] text-[var(--text-primary)] font-semibold text-lg hover:bg-[var(--bg-dark)] transition-all">Get In Touch</a>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { value: "8+", label: "Projects Shipped" },
-            { value: "$300K+", label: "Client Savings/yr" },
-            { value: "75+", label: "Users Served" },
-            { value: "4→0.08", label: "Days→Hours" },
-          ].map((s) => (
-            <div key={s.label} className="stat-pulse rounded-xl bg-[var(--bg-dark)]/60 backdrop-blur border border-[var(--border-light)] px-4 py-6">
-              <p className="text-3xl md:text-4xl font-bold gradient-text mb-1">{s.value}</p>
-              <p className="text-xs text-[var(--text-muted)] uppercase tracking-wider">{s.label}</p>
-            </div>
-          ))}
+    <section className="hero-mesh min-h-screen flex items-center relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 py-32 md:py-40 w-full">
+        <div className="max-w-3xl">
+          {/* Tag */}
+          <div className="animate-fade-in-up">
+            <span className="inline-block text-accent text-xs font-medium tracking-[0.2em] uppercase border border-accent-border bg-accent-muted px-4 py-1.5 rounded-full mb-8">
+              FP&amp;A Engineer &times; Builder
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-text-primary leading-[1.1] tracking-tight mb-6 animate-fade-in-up animation-delay-200">
+            I got tired of watching finance teams drown in spreadsheets.{" "}
+            <span className="text-accent">So I started building.</span>
+          </h1>
+
+          {/* Subtext */}
+          <p className="text-text-secondary text-lg md:text-xl leading-relaxed max-w-2xl mb-10 animate-fade-in-up animation-delay-400">
+            Senior FP&amp;A at a global telecom. I build the platforms, AI agents,
+            and automation that most finance teams wish they had &mdash; commission
+            portals, intelligent bots, data pipelines. Not because it&apos;s
+            trendy. Because I&apos;ve lived the pain.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-wrap gap-4 mb-16 animate-fade-in-up animation-delay-600">
+            <a
+              href="#work"
+              className="bg-accent hover:bg-accent-hover text-bg-primary font-medium px-7 py-3 rounded text-sm transition-all duration-300"
+            >
+              See the work
+            </a>
+            <a
+              href="#story"
+              className="border border-accent text-accent hover:bg-accent hover:text-bg-primary font-medium px-7 py-3 rounded text-sm transition-all duration-300"
+            >
+              My story
+            </a>
+          </div>
+
+          {/* Stats */}
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-text-muted text-sm animate-fade-in-up animation-delay-800">
+            <span>
+              <span className="text-text-primary font-semibold">8</span> platforms
+              shipped
+            </span>
+            <span className="text-border-hover">&middot;</span>
+            <span>
+              <span className="text-text-primary font-semibold">$300K+</span> saved
+              annually
+            </span>
+            <span className="text-border-hover">&middot;</span>
+            <span>
+              <span className="text-text-primary font-semibold">75+</span> users
+              served
+            </span>
+          </div>
         </div>
       </div>
     </section>

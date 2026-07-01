@@ -1,9 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
+import Story from "@/components/Story";
+import Work from "@/components/Work";
+import Beliefs from "@/components/Beliefs";
 import Services from "@/components/Services";
-import Projects from "@/components/Projects";
-import Expertise from "@/components/Expertise";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -12,10 +12,10 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <About />
+      <Story />
+      <Work />
+      <Beliefs />
       <Services />
-      <Projects />
-      <Expertise />
       <Contact />
       <Footer />
     </main>
