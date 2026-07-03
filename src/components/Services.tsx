@@ -10,6 +10,7 @@ const services = [
     title: "Finance Applications",
     description:
       "Custom-built platforms for commission management, planning dashboards, and data automation. Database to deployment.",
+    tags: ["Next.js", "PostgreSQL", "APIs"],
   },
   {
     icon: (
@@ -22,6 +23,7 @@ const services = [
     title: "AI & Automation",
     description:
       "Intelligent agents deployed across Slack, Teams, email. Connected to your EPM, CRM, and data sources.",
+    tags: ["LLMs", "Slack Bots", "Pipelines"],
   },
   {
     icon: (
@@ -34,6 +36,7 @@ const services = [
     title: "EPM & Anaplan",
     description:
       "Model building, CloudWorks automation, API integration, and migration from legacy tools.",
+    tags: ["Anaplan", "CloudWorks", "ETL"],
   },
   {
     icon: (
@@ -46,6 +49,7 @@ const services = [
     title: "FP&A Strategy",
     description:
       "Revenue forecasting, NRR analysis, board decks, scenario planning. Strategic finance that moves the needle.",
+    tags: ["Forecasting", "Board Decks", "NRR"],
   },
 ];
 
@@ -53,32 +57,41 @@ export default function Services() {
   return (
     <section id="services" className="py-24 md:py-32 bg-bg-primary">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="mb-16">
-          <span className="text-accent text-[0.75rem] font-semibold tracking-[0.08em] uppercase block mb-3">
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-accent text-[0.75rem] font-semibold tracking-[0.12em] uppercase block mb-3">
             Services
           </span>
-          <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary tracking-[-0.02em]">
+          <h2 className="text-3xl md:text-[2.75rem] font-bold text-text-primary tracking-[-0.02em] mb-4">
             How I can help
           </h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            Whether you need a full platform built or a strategic advisor who
+            understands the tech — I deliver both.
+          </p>
         </div>
 
-        {/* Grid */}
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((svc) => (
             <div
               key={svc.title}
-              className="bg-bg-secondary border border-border rounded-xl p-8 hover:border-accent/30 hover:shadow-sm transition-all duration-300 group"
+              className="group bg-bg-card border border-border rounded-2xl p-8 card-hover"
             >
-              <div className="w-12 h-12 rounded-lg bg-accent-light flex items-center justify-center text-accent mb-5 group-hover:bg-accent group-hover:text-text-inverse transition-colors duration-300">
+              <div className="w-14 h-14 rounded-xl bg-accent-light flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
                 {svc.icon}
               </div>
-              <h3 className="text-lg font-bold text-text-primary mb-2">
+              <h3 className="text-xl font-bold text-text-primary mb-2 group-hover:text-accent transition-colors">
                 {svc.title}
               </h3>
-              <p className="text-text-secondary text-[0.9375rem] leading-relaxed">
+              <p className="text-text-secondary text-[0.9375rem] leading-relaxed mb-5">
                 {svc.description}
               </p>
+              <div className="flex flex-wrap gap-2">
+                {svc.tags.map(tag => (
+                  <span key={tag} className="text-[0.6875rem] font-medium text-text-muted bg-bg-secondary px-2.5 py-1 rounded-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
