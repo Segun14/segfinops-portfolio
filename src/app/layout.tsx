@@ -1,34 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Segun Odunlade — FP&A Engineer & Builder",
+  title: "Segun Odunlade — Senior FP&A | Finance Systems Builder",
   description:
-    "I build the platforms, AI agents, and automation that most finance teams wish they had. Commission portals, intelligent bots, data pipelines.",
+    "Senior FP&A professional specializing in finance automation, commission systems, AI agents, and EPM solutions. Building intelligent infrastructure for modern finance teams.",
   keywords: [
     "FP&A",
-    "Finance Engineer",
+    "Financial Planning & Analysis",
     "Commission System",
     "Anaplan",
-    "AI Agent",
-    "Financial Planning",
     "Finance Automation",
+    "AI Agent",
+    "EPM",
   ],
   openGraph: {
-    title: "Segun Odunlade — FP&A Engineer & Builder",
+    title: "Segun Odunlade — Senior FP&A | Finance Systems Builder",
     description:
-      "I build intelligent finance systems that save finance teams thousands of hours.",
+      "Senior FP&A professional building intelligent finance infrastructure — commission platforms, AI agents, and EPM solutions.",
     type: "website",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="antialiased bg-bg-primary text-text-primary">
         {children}
       </body>

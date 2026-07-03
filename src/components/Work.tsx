@@ -1,133 +1,140 @@
 const projects = [
   {
-    tag: "Flagship",
     title: "Commission Intelligence Platform",
+    category: "Finance Application",
     description:
-      "Our finance team spent 4 days every month processing commissions in spreadsheets. I built a full-stack platform — Next.js, PostgreSQL, Anaplan REST API — that does it in 5 minutes. 75+ AEs, role-based dashboards, real-time data sync, full audit trail. Deployed on Kubernetes.",
-    metrics: [
-      { value: "4 days → 5 min", label: "Processing time" },
-      { value: "$300K/yr", label: "Cost savings" },
-      { value: "Zero", label: "Manual errors" },
+      "Full-stack commission management system with role-based dashboards, dynamic filtering, automated Anaplan data sync, and multi-format export. Used by 75+ sales reps and managers.",
+    impact: [
+      "80% reduction in commission query resolution time",
+      "Eliminated manual spreadsheet distribution",
+      "Real-time self-service access for all reps",
     ],
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Anaplan API", "Kubernetes"],
+    tech: ["Next.js", "PostgreSQL", "Anaplan API", "Tailwind CSS"],
   },
   {
-    tag: "AI / Agents",
     title: "FP&A Co-Pilot Agent",
+    category: "AI & Automation",
     description:
-      "An AI agent that operates as a virtual finance controller. Persistent memory, connected to email, calendar, EPM tools, CRM, and communication platforms. It doesn\u2019t just answer questions — it proactively monitors metrics, flags anomalies, and coordinates specialised sub-agents for commissions, forecasting, and reporting.",
-    metrics: [
-      { value: "24/7", label: "Monitoring" },
-      { value: "Multi-agent", label: "Architecture" },
-      { value: "Force ×", label: "For FP&A team" },
+      "AI-powered assistant deployed across Slack, handling FP&A queries, Salesforce pipeline analysis, commission calculations, and automated reporting. Processes natural language requests across multiple data sources.",
+    impact: [
+      "Automated daily Salesforce report sync",
+      "Instant pipeline analysis on demand",
+      "Connected Anaplan, Gmail, and Drive APIs",
     ],
-    stack: ["TypeScript", "AI/LLM", "Multi-Agent Architecture", "REST APIs"],
+    tech: ["Node.js", "Anthropic API", "Salesforce", "Slack"],
   },
   {
-    tag: "Conversational BI",
+    title: "Revenue Engine — SaaS Product",
+    category: "Product & Entrepreneurship",
+    description:
+      "Commission management SaaS product built from enterprise learnings. Multi-tenant architecture, Stripe billing, PostgreSQL backend, and full admin/rep separation with domain-level routing.",
+    impact: [
+      "$0 → $20K MRR product trajectory",
+      "Multi-tenant enterprise architecture",
+      "Stripe-integrated billing & onboarding",
+    ],
+    tech: ["Next.js", "PostgreSQL", "Stripe", "Vercel"],
+  },
+  {
     title: "Sales Performance Intelligence Bot",
+    category: "AI & Automation",
     description:
-      "Sales leadership needed answers about pipeline health and rep performance. Every question meant waiting for an analyst. I built a Slack bot that connects to our EPM, CRM, and revenue systems — leadership asks in plain English, gets formatted answers in seconds. Scheduled daily summaries and anomaly alerts included.",
-    metrics: [
-      { value: "60–70%", label: "Fewer ad-hoc requests" },
-      { value: "Seconds", label: "Response time" },
-      { value: "Proactive", label: "Risk detection" },
+      "Slack-native bot providing real-time revenue intelligence — Salesforce account ownership lookups, upcharge failure analysis, cancellation tracking, and shortfall alerts.",
+    impact: [
+      "Replaced 15+ manual report requests per week",
+      "Automated monthly commission variance alerts",
+      "Cross-platform data aggregation",
     ],
-    stack: ["TypeScript", "Slack API", "Salesforce", "Anaplan API"],
-  },
-  {
-    tag: "From Scratch",
-    title: "Revenue Engine ($0 → $20K MRR)",
-    description:
-      "Designed and built the complete revenue infrastructure for an early-stage company — pricing architecture, billing systems, sales tracking, financial dashboards, forecasting models. Built the analytical foundation that supported growth from nothing to $20K+ monthly recurring revenue.",
-    metrics: [
-      { value: "$0 → $20K+", label: "MRR growth" },
-      { value: "End-to-end", label: "Finance infra" },
-    ],
-    stack: ["Financial Modelling", "BI Dashboards", "Billing Systems", "Forecasting"],
+    tech: ["Python", "Salesforce API", "Slack Webhooks"],
   },
 ];
 
-const moreWork = [
-  "FP&A Data Automation Engine",
-  "Commission Calculation System",
-  "Anaplan Solutions Portfolio",
-  "FinSight",
+const additionalWork = [
+  "NRR Cohort Analysis — Excel workbook architecture for board reporting",
+  "Revenue Mix Visualization — FY21–FY26F segmented analysis",
+  "CloudWorks Automation — Anaplan scheduled data integrations",
+  "Forecasting Models — ML-based revenue prediction pipelines",
 ];
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 md:py-32 bg-bg-secondary relative">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-16 md:mb-20 max-w-xl">
-          <span className="tag-badge mb-5">Selected work</span>
-          <h2 className="font-[family-name:var(--font-playfair)] text-3xl md:text-4xl text-text-primary tracking-[-0.02em] mb-4">
+    <section id="work" className="py-24 md:py-32 bg-bg-secondary">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        {/* Section header */}
+        <div className="mb-16">
+          <span className="text-accent text-[0.75rem] font-semibold tracking-[0.08em] uppercase block mb-3">
+            Selected Work
+          </span>
+          <h2 className="text-3xl md:text-[2.5rem] font-bold text-text-primary tracking-[-0.02em]">
             Things I&apos;ve built
           </h2>
-          <p className="text-text-secondary leading-relaxed">
-            Each project started with a real problem I faced on the job.
-            No theoretical exercises — just solutions that ship.
-          </p>
         </div>
 
-        {/* Projects */}
+        {/* Project cards */}
         <div className="space-y-6">
-          {projects.map((project, i) => (
-            <article key={i} className="card-elevated p-6 md:p-8 lg:p-10">
-              {/* Top row: tag + stack */}
-              <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
-                <span className="tag-badge text-[0.625rem]">{project.tag}</span>
-                <div className="flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="text-text-muted text-[0.6875rem] bg-bg-tertiary border border-border px-2.5 py-0.5 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className="bg-bg-card border border-border rounded-xl p-8 md:p-10 hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="md:grid md:grid-cols-12 md:gap-10">
+                {/* Left — title & description */}
+                <div className="md:col-span-7 mb-6 md:mb-0">
+                  <span className="text-accent text-[0.6875rem] font-semibold uppercase tracking-[0.08em] block mb-2">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-3 tracking-[-0.01em]">
+                    {project.title}
+                  </h3>
+                  <p className="text-text-secondary text-[0.9375rem] leading-relaxed mb-5">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[0.6875rem] font-medium text-accent bg-accent-light px-2.5 py-1 rounded"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right — impact */}
+                <div className="md:col-span-5 md:border-l md:border-border md:pl-10">
+                  <h4 className="text-[0.6875rem] font-semibold text-text-muted uppercase tracking-[0.12em] mb-4">
+                    Impact
+                  </h4>
+                  <ul className="space-y-3">
+                    {project.impact.map((item) => (
+                      <li key={item} className="flex gap-3 text-[0.875rem] text-text-secondary leading-relaxed">
+                        <svg className="w-4 h-4 text-green mt-0.5 shrink-0" viewBox="0 0 16 16" fill="none">
+                          <path d="M3 8l3.5 3.5L13 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-
-              {/* Title */}
-              <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl text-text-primary tracking-tight mb-4">
-                {project.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-text-secondary leading-relaxed text-[0.9375rem] mb-6 max-w-3xl">
-                {project.description}
-              </p>
-
-              {/* Metrics */}
-              <div className="flex flex-wrap gap-3">
-                {project.metrics.map((m) => (
-                  <div key={m.label} className="impact-pill">
-                    <span className="font-semibold">{m.value}</span>
-                    <span className="text-text-muted text-xs">— {m.label}</span>
-                  </div>
-                ))}
-              </div>
-            </article>
+            </div>
           ))}
         </div>
 
-        {/* More work */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <p className="text-text-muted text-sm">
-            Also:{" "}
-            {moreWork.map((item, i) => (
-              <span key={item}>
-                <span className="text-text-secondary hover:text-accent transition-colors cursor-default">
-                  {item}
-                </span>
-                {i < moreWork.length - 1 && (
-                  <span className="text-border-hover mx-2">·</span>
-                )}
-              </span>
+        {/* Additional work */}
+        <div className="mt-12 bg-bg-card border border-border rounded-xl p-8 md:p-10">
+          <h3 className="text-[0.6875rem] font-semibold text-text-muted uppercase tracking-[0.12em] mb-5">
+            Also Delivered
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {additionalWork.map((item) => (
+              <div key={item} className="flex gap-3 text-text-secondary text-[0.875rem] leading-relaxed">
+                <span className="text-border mt-0.5">—</span>
+                {item}
+              </div>
             ))}
-          </p>
+          </div>
         </div>
       </div>
     </section>

@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "Work", hreply_to: "#work" },
-  { label: "Story", href: "#story" },
-  { label: "Services", href: "#services" },
+  { label: "Background", hreply_to: "#story" },
+  { label: "Services", hreply_to: "#services" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -22,59 +23,49 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "nav-blur bg-bg-primary/90 border-b border-border-subtle"
+          ? "nav-blur bg-bg-primary/95 border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <a
-            href="#"
-            className="font-[family-name:var(--font-playfair)] text-xl text-text-primary font-semibold tracking-tight"
-          >
-            S<span className="text-accent">.</span>
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="flex items-center justify-between h-[4.5rem]">
+          {/* Name as logo */}
+          <a href="#" className="text-text-primary font-semibold text-[0.9375rem] tracking-tight">
+            Segun Odunlade
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-text-muted hover:text-text-primary transition-colors text-sm px-4 py-2 rounded-lg hover:bg-bg-tertiary/50"
+                className="text-text-secondary hover:text-text-primary transition-colors text-[0.8125rem] font-medium"
               >
                 {link.label}
               </a>
             ))}
-            <div className="w-px h-5 bg-border mx-3" />
-            <a
-              href="#contact"
-              className="btn-primary text-xs py-2 px-5"
-            >
-              Get in touch
-            </a>
           </div>
 
           {/* Mobile Hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-bg-tertiary/50 transition-colors"
+            className="md:hidden flex flex-col gap-1.5 p-2"
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-2" : ""
+              className={`block w-5 h-[1.5px] bg-text-primary transition-all duration-300 ${
+                mobileOpen ? "rotate-45 translate-y-[7px]" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${
+              className={`block w-5 h-[1.5px] bg-text-primary transition-all duration-300 ${
                 mobileOpen ? "opacity-0" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-text-secondary transition-all duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-2" : ""
+              className={`block w-5 h-[1.5px] bg-text-primary transition-all duration-300 ${
+                mobileOpen ? "-rotate-45 -translate-y-[7px]" : ""
               }`}
             />
           </button>
@@ -83,25 +74,17 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-bg-secondary/98 nav-blur border-t border-border-subtle px-6 py-5 flex flex-col gap-1">
+        <div className="md:hidden bg-bg-primary border-t border-border px-6 py-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="text-text-secondary hover:text-text-primary transition-colors py-3 px-3 rounded-lg hover:bg-bg-tertiary/50"
+              className="block text-text-secondary hover:text-text-primary transition-colors py-3 text-[0.9375rem] font-medium border-b border-border last:border-b-0"
             >
               {link.label}
             </a>
           ))}
-          <div className="section-divider my-3" />
-          <a
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="btn-primary text-center mt-1"
-          >
-            Get in touch
-          </a>
         </div>
       )}
     </nav>
