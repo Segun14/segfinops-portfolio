@@ -66,7 +66,7 @@ const additionalWork = [
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 md:py-32 bg-bg-primary">
+    <section id="work" className="scroll-mt-20 py-24 md:py-32 bg-bg-primary">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center mb-16 md:mb-20">
           <span className="text-accent text-[0.75rem] font-semibold tracking-[0.12em] uppercase block mb-3">
