@@ -1,48 +1,41 @@
-const beliefs = [
+const principles = [
   {
-    text: "The best finance teams don't just report numbers — they build systems that make reporting irrelevant.",
-    highlight: "build systems",
+    number: "01",
+    title: "Controls before cleverness",
+    text: "Reliable definitions, reconciled data, and visible approvals come before automation or AI.",
   },
   {
-    text: "If you're still copy-pasting data between tools, you're burning money. Automation isn't a nice-to-have — it's finance infrastructure.",
-    highlight: "finance infrastructure",
+    number: "02",
+    title: "Build for the decision",
+    text: "A finance product should shorten the distance between a business question and a confident action.",
   },
   {
-    text: "AI won't replace FP&A professionals. But FP&A professionals who build with AI will replace those who don't.",
-    highlight: "build with AI",
+    number: "03",
+    title: "Explain every number",
+    text: "The best systems preserve evidence and make the calculation understandable to the people affected by it.",
   },
 ];
 
 export default function Beliefs() {
   return (
-    <section className="py-24 md:py-32 bg-bg-dark relative overflow-hidden">
-      {/* Subtle bg pattern */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-        backgroundSize: '40px 40px',
-      }} />
-
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
-        <div className="text-center mb-16 md:mb-20">
-          <span className="text-indigo-400 text-[0.75rem] font-semibold tracking-[0.12em] uppercase block mb-3">
-            Perspective
-          </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-bold text-white tracking-[-0.02em]">
-            What I believe
-          </h2>
+    <section className="principles-band relative overflow-hidden py-24 md:py-28">
+      <div className="absolute inset-0 founder-grid opacity-20" />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <span className="text-[0.6875rem] font-black uppercase tracking-[0.17em] text-cyan-300">How I build</span>
+            <h2 className="mt-4 text-3xl font-black tracking-[-0.035em] text-white md:text-5xl">Principles that keep finance technology useful.</h2>
+          </div>
+          <p className="max-w-md text-sm leading-relaxed text-slate-400">Technology creates leverage only when the underlying financial logic remains governed, traceable, and understood.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {beliefs.map((b, i) => (
-            <div
-              key={i}
-              className="bg-white/[0.04] backdrop-blur-sm border border-white/[0.08] rounded-2xl p-8 hover:bg-white/[0.07] hover:border-white/[0.15] transition-all duration-300 group"
-            >
-              <div className="text-5xl font-bold text-accent/30 mb-4 leading-none">&ldquo;</div>
-              <p className="text-white/90 text-[1.0625rem] leading-relaxed font-medium">
-                {b.text}
-              </p>
-            </div>
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {principles.map((principle) => (
+            <article key={principle.number} className="rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-7 backdrop-blur-sm transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.07]">
+              <span className="text-sm font-black text-cyan-300">{principle.number}</span>
+              <h3 className="mt-8 text-xl font-black text-white">{principle.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">{principle.text}</p>
+            </article>
           ))}
         </div>
       </div>

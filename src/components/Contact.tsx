@@ -1,129 +1,32 @@
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 bg-bg-secondary">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16 md:mb-20">
-          <span className="text-accent text-[0.75rem] font-semibold tracking-[0.12em] uppercase block mb-3">
-            Contact
-          </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-bold text-text-primary tracking-[-0.02em] mb-4">
-            Let&apos;s work together
-          </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Have a finance automation challenge or need a builder who understands
-            both the numbers and the code? Let&apos;s talk.
-          </p>
+    <section id="contact" className="contact-band scroll-mt-20 relative overflow-hidden py-24 md:py-32">
+      <div className="hero-orb hero-orb-three" />
+      <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-10">
+        <span className="inline-flex rounded-full border border-violet-300/20 bg-violet-300/10 px-4 py-2 text-[0.6875rem] font-black uppercase tracking-[0.16em] text-violet-200">Let&apos;s connect</span>
+        <h2 className="mx-auto mt-6 max-w-4xl text-4xl font-black leading-tight tracking-[-0.045em] text-white md:text-6xl">
+          Need someone who understands the finance problem and can build the solution?
+        </h2>
+        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+          I am open to conversations about finance systems, automation, product
+          partnerships, founder opportunities, and complex FP&amp;A challenges.
+        </p>
+
+        <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+          <a href="mailto:segunodunlade2014@gmail.com?subject=Finance%20systems%20conversation" className="button-primary justify-center">
+            Email me
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/oluwasegun-odunlade-b71484175" target="_blank" rel="noopener noreferrer" className="button-ghost justify-center">
+            Connect on LinkedIn
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M5 3h8v8M13 3L3 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          </a>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <div className="bg-bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
-            {/* Gradient top */}
-            <div className="h-1.5 bg-gradient-to-r from-indigo-500 via-violet-500 to-indigo-500" />
-
-            <div className="p-8 md:p-12">
-              <form
-                action="mailto:segunodunlade2014@gmail.com"
-                method="GET"
-                encType="text/plain"
-                className="space-y-6"
-              >
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label
-                      htmlFor="name"
-                      className="text-text-primary text-[0.8125rem] font-semibold block mb-2"
-                    >
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full bg-bg-secondary border border-border rounded-xl px-4 py-3.5 text-text-primary text-[0.9375rem] placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-glow transition-all"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="email"
-                      className="text-text-primary text-[0.8125rem] font-semibold block mb-2"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full bg-bg-secondary border border-border rounded-xl px-4 py-3.5 text-text-primary text-[0.9375rem] placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-glow transition-all"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="body"
-                    className="text-text-primary text-[0.8125rem] font-semibold block mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="body"
-                    name="body"
-                    rows={5}
-                    className="w-full bg-bg-secondary border border-border rounded-xl px-4 py-3.5 text-text-primary text-[0.9375rem] placeholder:text-text-muted focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent-glow transition-all resize-none"
-                    placeholder="Tell me about your project..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="inline-flex items-center gap-2.5 bg-accent text-white font-semibold px-8 py-4 rounded-xl text-[0.875rem] hover:bg-accent-hover transition-all hover:shadow-lg hover:shadow-accent/25 w-full sm:w-auto justify-center"
-                >
-                  Send Message
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </form>
-
-              {/* Contact info below form */}
-              <div className="mt-10 pt-8 border-t border-border grid sm:grid-cols-3 gap-6">
-                <div>
-                  <span className="text-text-muted text-[0.6875rem] font-semibold uppercase tracking-[0.12em] block mb-1.5">
-                    Email
-                  </span>
-                  <a
-                    href="mailto:segunodunlade2014@gmail.com"
-                    className="text-text-primary hover:text-accent transition-colors text-[0.875rem] font-medium"
-                  >
-                    segunodunlade2014@gmail.com
-                  </a>
-                </div>
-                <div>
-                  <span className="text-text-muted text-[0.6875rem] font-semibold uppercase tracking-[0.12em] block mb-1.5">
-                    LinkedIn
-                  </span>
-                  <a
-                    href="https://www.linkedin.com/in/oluwasegun-odunlade-b71484175"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-text-primary hover:text-accent transition-colors text-[0.875rem] font-medium"
-                  >
-                    Oluwasegun Odunlade
-                  </a>
-                </div>
-                <div>
-                  <span className="text-text-muted text-[0.6875rem] font-semibold uppercase tracking-[0.12em] block mb-1.5">
-                    Location
-                  </span>
-                  <span className="text-text-secondary text-[0.875rem]">
-                    Lagos, Nigeria (GMT+1)
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="mx-auto mt-14 grid max-w-3xl gap-3 border-t border-white/10 pt-8 text-sm text-slate-400 sm:grid-cols-3">
+          <span>Lagos · GMT+1</span>
+          <span>Finance · Product · Engineering</span>
+          <span>Founder, PaidLens</span>
         </div>
       </div>
     </section>

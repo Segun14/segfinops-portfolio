@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Segun Odunlade — Senior FP&A | Finance Systems Builder",
+  title: "Segun Odunlade — FP&A Leader, Founder & Finance Systems Builder",
   description:
-    "Senior FP&A professional specializing in finance automation, commission systems, AI agents, and EPM solutions. Building intelligent infrastructure for modern finance teams.",
+    "Segun Odunlade is a senior FP&A professional, founder of PaidLens, and builder of commission, planning, automation, and AI systems for modern finance teams.",
   keywords: [
     "FP&A",
     "Financial Planning & Analysis",
@@ -16,11 +16,13 @@ export const metadata: Metadata = {
     "Finance Automation",
     "AI Agent",
     "EPM",
+    "PaidLens",
+    "Founder",
   ],
   openGraph: {
-    title: "Segun Odunlade — Senior FP&A | Finance Systems Builder",
+    title: "Segun Odunlade — FP&A Leader, Founder & Finance Systems Builder",
     description:
-      "Senior FP&A professional building intelligent finance infrastructure — commission platforms, AI agents, and EPM solutions.",
+      "Finance operator, product founder, and systems builder creating trusted finance infrastructure.",
     type: "website",
   },
 };

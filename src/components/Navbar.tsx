@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { label: "Work", href: "#work" },
-  { label: "Background", hreply_to: "#story" },
-  { label: "Services", hreply_to: "#services" },
-  { label: "Contact", hreply_to: "#contact" },
+  { label: "Founder", href: "#founder" },
+  { label: "Story", href: "#story" },
+  { label: "Capabilities", href: "#services" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -14,96 +15,88 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "nav-blur bg-white/90 border-b border-border shadow-sm"
+      aria-label="Primary navigation"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled || mobileOpen
+          ? "nav-blur border-b border-slate-200/80 bg-white/95 shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-[4.5rem]">
-          <a
-            href="#"
-            className={`font-bold text-[0.9375rem] tracking-tight transition-colors ${
-              scrolled ? "text-text-primary" : "text-text-inverse"
-            }`}
-          >
-            Segun Odunlade
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="flex h-[4.75rem] items-center justify-between">
+          <a href="#top" className="flex items-center gap-3" aria-label="Segun Odunlade — back to top">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-cyan-400 text-sm font-black text-white shadow-lg shadow-violet-500/20">
+              SO
+            </span>
+            <span className={`text-sm font-bold tracking-tight ${scrolled || mobileOpen ? "text-slate-950" : "text-white"}`}>
+              Segun Odunlade
+            </span>
           </a>
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden items-center gap-7 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className={`text-[0.8125rem] font-medium transition-colors ${
-                  scrolled
-                    ? "text-text-secondary hover:text-accent"
-                    : "text-text-inverse-secondary hover:text-text-inverse"
+                className={`text-[0.8125rem] font-semibold transition-colors ${
+                  scrolled ? "text-slate-600 hover:text-violet-600" : "text-white/65 hover:text-white"
                 }`}
               >
                 {link.label}
               </a>
             ))}
             <a
-              href="#contact"
-              className={`text-[0.8125rem] font-semibold px-5 py-2 rounded-lg transition-all ${
-                scrolled
-                  ? "bg-accent text-white hover:bg-accent-hover"
-                  : "bg-white/10 text-white hover:bg-white/20 border border-white/20"
-              }`}
+              href="mailto:segunodunlade2014@gmail.com?subject=Portfolio%20enquiry"
+              className="rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-5 py-2.5 text-[0.8125rem] font-bold text-white shadow-lg shadow-violet-500/20 transition hover:-translate-y-0.5 hover:shadow-violet-500/30"
             >
-              Hire Me
+              Start a conversation
             </a>
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            aria-label="Toggle menu"
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            className={`rounded-lg p-2 md:hidden ${scrolled || mobileOpen ? "text-slate-950" : "text-white"}`}
+            aria-label="Toggle navigation menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
-            {[0,1,2].map(i => (
-              <span
-                key={i}
-                className={`block w-5 h-[1.5px] transition-all duration-300 ${
-                  scrolled ? "bg-text-primary" : "bg-white"
-                } ${mobileOpen && i === 0 ? "rotate-45 translate-y-[7px]" : ""}
-                  ${mobileOpen && i === 1 ? "opacity-0" : ""}
-                  ${mobileOpen && i === 2 ? "-rotate-45 -translate-y-[7px]" : ""}`}
-              />
-            ))}
+            <span className="sr-only">Toggle navigation</span>
+            <div className="flex w-5 flex-col gap-1.5">
+              <span className={`h-0.5 w-5 rounded-full bg-current transition ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
+              <span className={`h-0.5 w-5 rounded-full bg-current transition ${mobileOpen ? "opacity-0" : ""}`} />
+              <span className={`h-0.5 w-5 rounded-full bg-current transition ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            </div>
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-4 shadow-lg">
+        <div id="mobile-navigation" className="border-t border-slate-200 bg-white px-6 pb-6 pt-3 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-text-secondary hover:text-accent transition-colors py-3 text-[0.9375rem] font-medium border-b border-border/50 last:border-b-0"
+              className="block border-b border-slate-100 py-3 text-sm font-semibold text-slate-700 transition hover:text-violet-600"
             >
               {link.label}
             </a>
           ))}
           <a
-            href="#contact"
+            href="mailto:segunodunlade2014@gmail.com?subject=Portfolio%20enquiry"
             onClick={() => setMobileOpen(false)}
-            className="block mt-4 text-center bg-accent text-white font-semibold py-3 rounded-lg hover:bg-accent-hover transition-colors"
+            className="mt-5 block rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 px-5 py-3 text-center text-sm font-bold text-white"
           >
-            Hire Me
+            Start a conversation
           </a>
         </div>
       )}

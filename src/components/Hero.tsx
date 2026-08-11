@@ -1,74 +1,60 @@
+import { HeroDashboardPreview } from "./ProductMockups";
+
 export default function Hero() {
   return (
-    <section className="hero-gradient min-h-[100dvh] flex items-center relative">
-      <div className="hero-grid" />
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 py-32 md:py-40 w-full relative z-10">
-        <div className="md:grid md:grid-cols-12 md:gap-12 items-center">
-          <div className="md:col-span-7">
-            <div className="animate-fade-in-up">
-              <span className="inline-flex items-center gap-2 bg-white/10 border border-white/10 text-indigo-300 text-[0.75rem] font-semibold tracking-wide uppercase px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                Senior FP&amp;A · Finance Systems Builder
-              </span>
-            </div>
+    <section id="top" className="hero-spectrum relative flex min-h-[100dvh] items-center overflow-hidden pt-24">
+      <div className="hero-grid absolute inset-0" />
+      <div className="hero-orb hero-orb-one" />
+      <div className="hero-orb hero-orb-two" />
 
-            <h1 className="text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] font-bold text-white leading-[1.08] tracking-[-0.03em] mb-6 animate-fade-in-up delay-1">
-              I turn complex finance workflows into
-              <br />
-              <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-indigo-300 bg-clip-text text-transparent">
-                systems teams can trust
-              </span>
-            </h1>
-
-            <p className="text-text-inverse-secondary text-lg md:text-xl leading-relaxed max-w-xl mb-10 animate-fade-in-up delay-2">
-              I combine financial judgement, data architecture, and software to
-              improve how teams plan, report, calculate commissions, and make
-              decisions.
-            </p>
-
-            <div className="flex flex-wrap gap-4 animate-fade-in-up delay-3">
-              <a
-                href="#work"
-                className="inline-flex items-center gap-2.5 bg-accent font-semibold px-8 py-4 rounded-xl text-white text-[0.875rem] hover:bg-accent-hover transition-all hover:shadow-lg hover:shadow-accent/25"
-              >
-                Explore case studies
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-[0.875rem] hover:bg-white/10 transition-all backdrop-blur-sm"
-              >
-                Get in touch
-              </a>
-            </div>
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-16 px-6 pb-24 pt-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-10 lg:pb-28 lg:pt-20">
+        <div>
+          <div className="animate-fade-in-up flex flex-wrap gap-2">
+            <span className="hero-badge">Senior FP&amp;A</span>
+            <span className="hero-badge hero-badge-cyan">Founder, PaidLens</span>
+            <span className="hero-badge hero-badge-coral">Finance Systems Builder</span>
           </div>
 
-          <div className="md:col-span-5 mt-16 md:mt-0 animate-slide-right delay-4">
-            <div className="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-2xl p-8 md:p-10">
-              <div className="space-y-8">
-                <div>
-                  <div className="text-4xl font-bold text-white stat-glow">8</div>
-                  <div className="text-text-inverse-secondary text-sm mt-1">Finance systems delivered</div>
-                </div>
-                <div className="h-px bg-white/10" />
-                <div>
-                  <div className="text-4xl font-bold text-white stat-glow">75+</div>
-                  <div className="text-text-inverse-secondary text-sm mt-1">Finance and sales users supported</div>
-                </div>
-                <div className="h-px bg-white/10" />
-                <div>
-                  <div className="text-2xl font-bold text-white stat-glow">Finance · Data · Software</div>
-                  <div className="text-text-inverse-secondary text-sm mt-1">One connected approach</div>
-                </div>
+          <h1 className="animate-fade-in-up delay-1 mt-7 max-w-3xl text-[2.8rem] font-black leading-[1.03] tracking-[-0.045em] text-white sm:text-6xl lg:text-[4.65rem]">
+            I build finance systems that turn complexity into
+            <span className="text-spectrum"> clear decisions.</span>
+          </h1>
+
+          <p className="animate-fade-in-up delay-2 mt-7 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl">
+            I sit at the intersection of finance, product, and engineering—leading
+            FP&amp;A work, building internal operating systems, and founding products
+            that make financial workflows easier to trust.
+          </p>
+
+          <div className="animate-fade-in-up delay-3 mt-9 flex flex-wrap gap-4">
+            <a href="#work" className="button-primary">
+              Explore the work
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </a>
+            <a href="#founder" className="button-ghost">Founder story</a>
+          </div>
+
+          <div className="animate-fade-in-up delay-4 mt-12 grid max-w-xl grid-cols-3 gap-3 border-t border-white/10 pt-6">
+            {[
+              ["8", "systems delivered"],
+              ["75+", "users supported"],
+              ["3", "disciplines connected"],
+            ].map(([value, label]) => (
+              <div key={label}>
+                <p className="text-2xl font-black text-white md:text-3xl">{value}</p>
+                <p className="mt-1 text-[0.6875rem] leading-snug text-slate-400">{label}</p>
               </div>
-            </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="animate-slide-right delay-3 relative">
+          <div className="absolute -inset-8 rounded-full bg-violet-500/15 blur-3xl" />
+          <div className="relative rotate-[1deg] transition duration-500 hover:rotate-0 hover:scale-[1.01]">
+            <HeroDashboardPreview />
           </div>
         </div>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
     </section>
   );
 }

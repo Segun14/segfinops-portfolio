@@ -1,98 +1,57 @@
-const services = [
+const capabilities = [
   {
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
-      </svg>
-    ),
-    title: "Finance Applications",
-    description:
-      "Custom-built platforms for commission management, planning dashboards, and data automation. Database to deployment.",
-    tags: ["Next.js", "PostgreSQL", "APIs"],
+    label: "Finance Systems",
+    title: "Operational applications",
+    text: "Commission management, planning workflows, reporting portals, controlled adjustments, approvals, and audit-ready evidence.",
+    tags: ["Product design", "Data models", "Workflow controls"],
+    color: "bg-violet-500",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2L2 7l10 5 10-5-10-5z" />
-        <path d="M2 17l10 5 10-5" />
-        <path d="M2 12l10 5 10-5" />
-      </svg>
-    ),
-    title: "AI & Automation",
-    description:
-      "Intelligent agents deployed across Slack, Teams, email. Connected to your EPM, CRM, and data sources.",
-    tags: ["LLMs", "Slack Bots", "Pipelines"],
+    label: "Automation",
+    title: "Connected finance workflows",
+    text: "APIs, scheduled syncs, exception monitoring, data pipelines, and integrations across CRM, EPM, reporting, and collaboration tools.",
+    tags: ["APIs", "Data pipelines", "Monitoring"],
+    color: "bg-cyan-400",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
-      </svg>
-    ),
-    title: "EPM & Anaplan",
-    description:
-      "Model building, CloudWorks automation, API integration, and migration from legacy tools.",
-    tags: ["Anaplan", "CloudWorks", "ETL"],
+    label: "Planning",
+    title: "Decision-support models",
+    text: "Driver-based forecasts, workforce planning, revenue and margin analysis, scenario design, and executive-ready decision narratives.",
+    tags: ["Forecasting", "Scenario planning", "FP&A"],
+    color: "bg-amber-400",
   },
   {
-    icon: (
-      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10" />
-        <line x1="12" y1="20" x2="12" y2="4" />
-        <line x1="6" y1="20" x2="6" y2="14" />
-      </svg>
-    ),
-    title: "FP&A Strategy",
-    description:
-      "Revenue forecasting, NRR analysis, board decks, scenario planning. Strategic finance that moves the needle.",
-    tags: ["Forecasting", "Board Decks", "NRR"],
+    label: "AI Systems",
+    title: "Governed intelligence",
+    text: "Finance co-pilots, conversational BI, anomaly detection, and agent workflows with human approval and deterministic calculations.",
+    tags: ["AI agents", "Conversational BI", "Guardrails"],
+    color: "bg-rose-400",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 bg-bg-primary">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="text-center mb-16 md:mb-20">
-          <span className="text-accent text-[0.75rem] font-semibold tracking-[0.12em] uppercase block mb-3">
-            Services
-          </span>
-          <h2 className="text-3xl md:text-[2.75rem] font-bold text-text-primary tracking-[-0.02em] mb-4">
-            How I can help
-          </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Whether you need a full platform built or a strategic advisor who
-            understands the tech — I deliver both.
-          </p>
+    <section id="services" className="scroll-mt-20 bg-[#f4f7fb] py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="section-kicker">Capabilities</span>
+          <h2 className="section-title mt-4">I bridge the gap between finance requirements and shipped technology.</h2>
+          <p className="section-copy mx-auto mt-5">That means I can challenge the business logic, structure the data, shape the user experience, and work through implementation.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {services.map((svc) => (
-            <div
-              key={svc.title}
-              className="group bg-bg-card border border-border rounded-2xl p-8 card-hover"
-            >
-              <div className="w-14 h-14 rounded-xl bg-accent-light flex items-center justify-center text-accent mb-6 group-hover:bg-accent group-hover:text-white transition-colors duration-300">
-                {svc.icon}
+        <div className="mt-16 grid gap-5 md:grid-cols-2">
+          {capabilities.map((capability) => (
+            <article key={capability.title} className="rounded-[1.6rem] border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-200/60 md:p-8">
+              <div className="flex items-center gap-3">
+                <span className={`h-3 w-3 rounded-full ${capability.color}`} />
+                <span className="text-[0.625rem] font-black uppercase tracking-[0.15em] text-slate-400">{capability.label}</span>
               </div>
-              <h3 className="text-xl font-bold text-text-primary mb-2 group-hover:text-accent transition-colors">
-                {svc.title}
-              </h3>
-              <p className="text-text-secondary text-[0.9375rem] leading-relaxed mb-5">
-                {svc.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {svc.tags.map(tag => (
-                  <span key={tag} className="text-[0.6875rem] font-medium text-text-muted bg-bg-secondary px-2.5 py-1 rounded-md">
-                    {tag}
-                  </span>
-                ))}
+              <h3 className="mt-5 text-2xl font-black tracking-tight text-slate-950">{capability.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{capability.text}</p>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {capability.tags.map((tag) => <span key={tag} className="tech-chip">{tag}</span>)}
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
